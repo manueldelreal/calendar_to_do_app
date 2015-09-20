@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Authentication
 gem 'devise'
 
+# momemt.js dependency, it is need it for fullcalendar jquery plugin
+gem 'momentjs-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
