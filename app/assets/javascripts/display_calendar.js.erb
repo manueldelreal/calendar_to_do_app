@@ -1,0 +1,33 @@
+// display calendar to id 'calendar' div in calendar_actions index.
+// Sample event data, need to refactor with calendar_actions data
+	$(document).ready(function() {
+		//Retrieving calendar action data from index view
+		var calendar_actions = $('#calendar').data('actions');
+		//console.log(calendar_actions);
+		var calendar_actions_length = calendar_actions.length
+		var events = [];
+
+		for(var i=0; i< calendar_actions_length; i++){
+			calendar_action = calendar_actions[i];
+			var event_data = {
+				'title': calendar_action.title,
+				'start': calendar_action.start_date,
+				'end': calendar_action.end_date,
+				'url': '/calendar_actions/' + calendar_action.id
+			}
+			events.push(event_data);
+		}
+
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			defaultDate: '2015-09-12',
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			events: events
+		});
+		
+	});

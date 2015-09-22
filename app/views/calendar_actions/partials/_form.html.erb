@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    
+    <%= form_for @calendar_action do |f| %>
+
+    <% if @calendar_action.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@calendar_action.errors.count, "error") %> prohibited
+          this calendar_action from being saved:
+        </h2>
+        <ul>
+          <% @calendar_action.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :title %>:
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>:
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :start_date %>:
+        <%= f.datetime_select :start_date, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :end_date %>:
+        <%= f.datetime_select :end_date, class: 'form-control' %>
+      </div>
+        <%= f.submit class: 'btn btn-success' %>
+        <%= link_to 'Back', calendar_actions_path, class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>

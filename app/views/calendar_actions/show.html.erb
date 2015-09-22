@@ -1,0 +1,25 @@
+
+<h1 class="text-center">Calendar Action Details</h1>
+
+<h3>Title: <%= @calendar_action.title %></h3>
+<ul class="list-group">
+	<li class="list-group-item">
+		<strong>Description:</strong> <%= @calendar_action.description %>
+	</li>
+	<li class="list-group-item">
+		<strong>Start date:</strong>
+  		<%= @calendar_action.start_date %>	
+	</li>
+	<li class="list-group-item">
+		<strong>End date:</strong>
+  		<%= @calendar_action.end_date %>
+	</li>
+</ul>
+<div class="row">	
+<%= link_to 'Edit', edit_calendar_action_path(@calendar_action), class: 'btn btn-success' %>
+<%= link_to 'Destroy', calendar_action_path(@calendar_action),
+			  class: 'btn btn-danger',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', calendar_actions_path, class: 'btn btn-default' %> 
+</div>
