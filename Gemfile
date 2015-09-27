@@ -34,6 +34,9 @@ gem "omniauth-google-oauth2"
 # Twitter authentication
 gem 'omniauth-twitter'
 
+# Github authentication
+gem 'omniauth-github'
+
 # momemt.js dependency, it is need it for fullcalendar jquery plugin
 gem 'momentjs-rails'
 

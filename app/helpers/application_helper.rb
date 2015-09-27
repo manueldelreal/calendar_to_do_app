@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 	def has_image_login(provider)
-		providers = [:google_oauth2, :twitter]
+		providers = [:google_oauth2, :twitter, :github]
 		providers.each do |registered|
 			if registered == provider
 				return true
@@ -15,6 +15,8 @@ module ApplicationHelper
 			return "google_button"
 		elsif provider == :twitter
 			return "twitter_logo"
+		elsif provider == :github
+			return "github_logo"
 		end
 	end
 
