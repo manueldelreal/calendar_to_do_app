@@ -239,7 +239,7 @@ Devise.setup do |config|
   require "omniauth-google-oauth2"
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
   config.omniauth :google_oauth2, "82497359461-dhlemq0450v4bpqttpbgli2e3fsp3aje.apps.googleusercontent.com", "0UAOZNvGExJuxp1iB_0ROQPH", { }
-
+  config.omniauth :twitter, "TegJr8Cw5ZqEpmOkR7vnsM0xG", "Wf4HL7e87cYDnfmEr9kVwr8vt3BRvYtbJvKdKiJyeoksp4F2UT"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

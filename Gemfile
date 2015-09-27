@@ -31,6 +31,9 @@ gem 'devise'
 # Google authentication
 gem "omniauth-google-oauth2"
 
+# Twitter authentication
+gem 'omniauth-twitter'
+
 # momemt.js dependency, it is need it for fullcalendar jquery plugin
 gem 'momentjs-rails'
 

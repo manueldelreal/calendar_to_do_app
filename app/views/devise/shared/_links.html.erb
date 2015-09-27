@@ -8,8 +8,8 @@
 	</div>
 	<div>		
 	  <%- resource_class.omniauth_providers.each do |provider| %>
-	  	<% if provider == :google_oauth2 %>
-	  		<%= link_to image_tag("google_button"), omniauth_authorize_path(resource_name, provider), class: 'login-button' %><br />
+	  	<% if has_image_login(provider) %>
+	  		<%= link_to image_tag(login_image(provider)), omniauth_authorize_path(resource_name, provider), class: "login-button-#{provider}" %>
 	  	<% else %>
 	    	<%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
 	  	<% end %>
