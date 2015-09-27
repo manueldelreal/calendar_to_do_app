@@ -1,6 +1,10 @@
 
-
-<h1 class="text-center">Calendar</h1>
+<div class="row">
+	<%= render 'calendar_actions/partials/dropdown_menu'%>
+	<div class="col-md-8">
+		<h1 class="text-center">Calendar</h1>
+	</div>
+</div>
 
 <%= content_tag 'div', id: "calendar", data: {actions: @calendar_actions} do %>
 <% end %>

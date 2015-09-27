@@ -17,4 +17,3 @@
 //= require moment
 //= require bootstrap-sprockets
 //= require fullcalendar
-//= require_tree .

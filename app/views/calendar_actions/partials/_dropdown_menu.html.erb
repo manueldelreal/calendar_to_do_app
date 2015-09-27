@@ -1,0 +1,21 @@
+<div class="col-md-2">
+    <div class="btn-group">
+  <button type="button" class="btn btn-primary">View</button>
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li>
+    <%= link_to "Calendar View", calendar_actions_path %>
+    </li>
+    <li>
+    <%= link_to "All Calendar Actions View", calendar_actions_all_path %>
+    </li>
+    <li role="separator" class="divider"></li>
+    <li>
+    <%= link_to "Create a New Calendar Action", new_calendar_action_path %>
+    </li>
+  </ul>
+</div>
+</div>

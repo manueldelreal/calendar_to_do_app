@@ -5,6 +5,10 @@ class CalendarActionsController < ApplicationController
 		@calendar_actions = CalendarAction.all
 	end
 
+	def all
+		@calendar_actions = CalendarAction.all
+	end
+
 	def show
 		@calendar_action = CalendarAction.find(params[:id])
 	end

@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Authentication
 gem 'devise'
 
+# Google authentication
+gem "omniauth-google-oauth2"
+
 # momemt.js dependency, it is need it for fullcalendar jquery plugin
 gem 'momentjs-rails'
 

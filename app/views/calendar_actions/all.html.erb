@@ -1,0 +1,57 @@
+<div class="row">
+	<%= render 'calendar_actions/partials/dropdown_menu'%>
+	<div class="col-md-8">
+		<h1 class="text-center">All Calendar Actions</h1>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th id="title">Title</th>
+                <th id="description-header">Description</th> 
+                <th id="date">Start Date</th>
+                <th id="date">End Date</th>
+                <th id="action"></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="panel-body">
+    <table class="table table-condensed table-hover">
+        <tbody>
+        	<% @calendar_actions.each do |calendar_action| %>
+            <tr>
+                <td id="title">
+                <%= link_to calendar_action.title, calendar_action_path(calendar_action) %>
+                </td>
+                <% if calendar_action.description %>
+                	<td id="description"><%= calendar_action.description %></td>
+                <% else %>
+                	<td id="description"> No description </td>
+                <% end %>
+                <td id="date"><%= calendar_action.start_date %></td> 
+                <td id="date"><%= calendar_action.end_date %></td> 
+                <td id="action">
+                	<%= link_to calendar_action_path(calendar_action), title: "View", class: 'btn btn-success' do%>
+                		<span class="glyphicon glyphicon-eye-open"></span>
+                	<% end %>
+                	<%= link_to edit_calendar_action_path(calendar_action), title: "Edit", class: 'btn btn-info' do%>
+                		<span class="glyphicon glyphicon-pencil"></span>
+                	<% end %>
+                	<%= link_to calendar_action_path(calendar_action),
+                		title: "Delete",
+                	 	class: 'btn btn-danger',
+                	 	method: :delete,
+                	 	data: { confirm: 'Are you sure?' } do %>
+                		<span class="glyphicon glyphicon-remove"></span>
+                	<% end %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+</div>
